@@ -16,7 +16,7 @@ This is a collection of KIE projects with following relationship:
 
 See the kie-test-util project for examples on invoking DMN decision through java api.
 
-Includes a [Postman Collection](kie-test-util/fsi-credit-dispute.postman_collection.json) with all the relevant calls for the demo:
+Includes a [Postman Collection](fsi-credit-dispute.postman_collection.json) with all the relevant calls for the demo:
 
 * Calling Additional Info rules for dynamic questions
 * Invoking Automatic Processing decision
