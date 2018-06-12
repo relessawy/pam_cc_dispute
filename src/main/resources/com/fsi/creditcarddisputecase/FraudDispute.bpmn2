@@ -2,7 +2,7 @@
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_Q1-5UENYEei5dvKhslYr8A" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" exporter="jBPM Designer" exporterVersion="6.2.0" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.omg.org/bpmn20" typeLanguage="http://www.java.com/javaTypes">
   <bpmn2:itemDefinition id="_caseFile_customerStatusItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_caseFile_totalFraudAmountItem" structureRef="Float"/>
-  <bpmn2:itemDefinition id="_fraudDataItem" structureRef="com.fsi.creditcarddisputecase.FraudData"/>
+  <bpmn2:itemDefinition id="_fraudDataItem" structureRef="com.redhat.fsi.creditcarddisputecase.FraudData"/>
   <bpmn2:itemDefinition id="_caseFile_automatedItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_approveChargebackItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_caseFile_customerAgeItem" structureRef="Integer"/>
@@ -55,7 +55,7 @@
   <bpmn2:itemDefinition id="__2465E001-5445-41D3-A076-2085F2063611_Cardholder-Risk-RatingOutputXItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="__2465E001-5445-41D3-A076-2085F2063611_Dispute-Risk-RatingOutputXItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="__2465E001-5445-41D3-A076-2085F2063611_Process-AutomaticallyOutputXItem" structureRef="Boolean"/>
-  <bpmn2:process id="CreditCardDisputeCase.FraudDispute" drools:adHoc="true" drools:packageName="com.fsi.creditcarddisputecase" drools:version="1.0" name="FraudDispute" isExecutable="true">
+  <bpmn2:process id="CreditCardDisputeCase.FraudDispute" drools:adHoc="true" drools:packageName="com.redhat.fsi.creditcarddisputecase" drools:version="1.0" name="FraudDispute" isExecutable="true">
     <bpmn2:extensionElements>
       <drools:metaData name="customCaseIdPrefix">
         <drools:metaValue><![CDATA[FR]]></drools:metaValue>
@@ -97,7 +97,7 @@
 
 System.out.println("FraudData (amount,status,age,incidentCount):" + caseFile_totalFraudAmount + ", " + caseFile_customerStatus + ", " + caseFile_customerAge + ", " + caseFile_incidentCount);
 
-fraudData = new com.fsi.creditcarddisputecase.FraudData();
+fraudData = new com.redhat.fsi.creditcarddisputecase.FraudData();
 fraudData.totalFraudAmount = caseFile_totalFraudAmount;
 fraudData.customerStatus = caseFile_customerStatus;
 
