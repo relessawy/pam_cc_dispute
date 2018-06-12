@@ -1,5 +1,5 @@
 <decision-table52>
-  <tableName>Cardholder Risk Rating</tableName>
+  <tableName>CardholderRiskRating</tableName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>-1</width>
