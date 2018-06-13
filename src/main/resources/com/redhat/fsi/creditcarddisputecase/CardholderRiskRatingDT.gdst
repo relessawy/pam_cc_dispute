@@ -154,7 +154,7 @@
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
-  <packageName>com.fsi.creditcarddisputecase</packageName>
+  <packageName>com.redhat.fsi.creditcarddisputecase</packageName>
   <tableFormat>EXTENDED_ENTRY</tableFormat>
   <hitPolicy>NONE</hitPolicy>
   <data/>
