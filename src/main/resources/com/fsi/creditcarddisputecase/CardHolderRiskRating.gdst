@@ -88,7 +88,35 @@
       <entryPointName></entryPointName>
     </Pattern52>
   </conditionPatterns>
-  <actionCols/>
+  <actionCols>
+    <org.drools.workbench.models.guided.dtable.shared.model.BRLActionColumn>
+      <hideColumn>false</hideColumn>
+      <width>-1</width>
+      <header>Cardholder Risk Rating</header>
+      <definition>
+        <org.drools.workbench.models.datamodel.rule.ActionUpdateField>
+          <fieldValues>
+            <org.drools.workbench.models.datamodel.rule.ActionFieldValue>
+              <field>riskRating</field>
+              <value>cardholder.riskRating + $param</value>
+              <nature>3</nature>
+              <type>Integer</type>
+            </org.drools.workbench.models.datamodel.rule.ActionFieldValue>
+          </fieldValues>
+          <variable>cardholder</variable>
+        </org.drools.workbench.models.datamodel.rule.ActionUpdateField>
+      </definition>
+      <childColumns>
+        <org.drools.workbench.models.guided.dtable.shared.model.BRLActionVariableColumn>
+          <hideColumn>false</hideColumn>
+          <width>100</width>
+          <header>Cardholder Risk Rating</header>
+          <varName></varName>
+          <fieldType>Boolean</fieldType>
+        </org.drools.workbench.models.guided.dtable.shared.model.BRLActionVariableColumn>
+      </childColumns>
+    </org.drools.workbench.models.guided.dtable.shared.model.BRLActionColumn>
+  </actionCols>
   <auditLog>
     <filter class="org.drools.guvnor.client.modeldriven.dt52.auditlog.DecisionTableAuditLogFilter">
       <acceptedTypes>
