@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns:triso="http://www.trisotech.com/2015/triso/modeling" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase" xmlns:trisofeed="http://trisotech.com/feed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.trisotech.com/dmn/definitions/_6ac122e1-0fb1-47d2-8c9b-55e7dba04085" id="_6ac122e1-0fb1-47d2-8c9b-55e7dba04085" namespace="http://www.trisotech.com/dmn/definitions/_6ac122e1-0fb1-47d2-8c9b-55e7dba04085"          exporter="DMN Modeler" exporterVersion="6.0.9" name="CardholderRiskRating" triso:logoChoice="Default">
+    <semantic:extensionElements/>
+    <semantic:itemDefinition name="Card_Holder" label="Card Holder">
+        <semantic:itemComponent id="_cdc37baa-1df7-42c7-a390-dabee402cda7" name="Age">
+            <semantic:typeRef>number</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_de98d164-c0e1-44c3-9f9c-62b8b1391ce0" name="Incident Count">
+            <semantic:typeRef>number</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_39c75f43-45bd-4565-87df-d4e4d775f681" name="Status">
+            <semantic:typeRef>string</semantic:typeRef>
+        </semantic:itemComponent>
+    </semantic:itemDefinition>
+    <semantic:decision id="_6bcfc2cf-8956-47b8-a615-86e922dd703a" name="Cardholder Risk Rating">
+        <semantic:variable name="Cardholder Risk Rating" id="_65451d52-b19a-42f6-8fec-6a6cddac1dad" typeRef="number"/>
+        <semantic:informationRequirement id="_1fd373dc-61f7-4581-9e66-35e043ad0375">
+            <semantic:requiredInput href="#_d15a52cc-684f-407e-8459-12dd1e283d40"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_d352a5ec-5a95-4a7f-af15-7ab75bb22ccd">
+            <semantic:requiredInput href="#_1432307c-611a-4029-9ee1-3c63c62b1b83"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_6dfe1bab-470a-4d57-a52f-01913fabd04e">
+            <semantic:requiredInput href="#_06767467-0f6f-4080-9f76-4901638de5b4"/>
+        </semantic:informationRequirement>
+        <semantic:decisionTable id="_131aaea7-ff57-4d27-8df4-099166e3167f" hitPolicy="COLLECT" outputLabel="Cardholder Risk Rating" aggregation="SUM">
+            <semantic:input id="_d4252ea3-d911-46af-8486-7701065b87bf">
+                <semantic:inputExpression typeRef="number">
+                    <semantic:text>Incident Count</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_d4976f52-0b75-40c5-87fe-0614f33bcd4c">
+                <semantic:inputExpression typeRef="string">
+                    <semantic:text>Cardholder Status</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_cdf72abb-0406-46e6-a28a-91686fe7fd7d">
+                <semantic:inputExpression typeRef="number">
+                    <semantic:text>Age</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:output id="_de7d6a99-1dff-4c18-a240-006a0a317c8a"/>
+            <semantic:rule id="_3a7bbce9-5c29-4e12-9c5a-393769915fe0">
+                <semantic:inputEntry id="_9b8e1f83-5d53-4671-ad5a-98e237700221">
+                    <semantic:text>&gt; 2</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_13175cb7-359b-4e62-9c15-0e82d7d4329e">
+                    <semantic:text>"GOLD"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a6d76d9c-b17f-49e4-8b1b-7a46a18c425e">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_74a52198-bed8-4089-8227-1fe6a9d09612">
+                    <semantic:text>1</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+            <semantic:rule id="_f8daf382-f4f5-43a9-875d-81a26f6428c1">
+                <semantic:inputEntry id="_10f6b81a-6e73-4924-bcb2-ac15b065475a">
+                    <semantic:text>&gt; 2</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_51368e3e-761c-4a94-87c4-9d30be2051be">
+                    <semantic:text>"SILVER"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_df7b3aca-9610-4234-a4cd-33addf37430c">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_7d57a6ca-ab8b-4918-bcdf-ec3ce17dfb7f">
+                    <semantic:text>2</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+            <semantic:rule id="_28a3bba4-1f22-47d9-8f9a-9bbcdf9f0a40">
+                <semantic:inputEntry id="_20a90fbf-19a8-4141-92be-c4de9db29949">
+                    <semantic:text>&gt; 2</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_97c51bac-1ebd-487d-83c6-cf2c9a692602">
+                    <semantic:text>"STANDARD"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_717f4118-65e5-4738-9fc6-6cbf3fe9ff5f">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_da3fdb48-a549-42b9-a210-826c57a8688e">
+                    <semantic:text>3</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+            <semantic:rule id="_bbe0b760-fa09-4237-8a20-fb73d31a294b">
+                <semantic:inputEntry id="_ea97040e-0c1a-490f-bbfb-6591533bdb8e">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_72a59557-fdd1-4b3f-996b-3e7b38ca5093">
+                    <semantic:text>"SILVER"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_725aa60a-aed6-48cc-a2d0-4a96f94b2e0c">
+                    <semantic:text>&lt; 25</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_e22b97d0-ab13-42a9-83d2-3b9df30bed33">
+                    <semantic:text>1</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+            <semantic:rule id="_a4fa1ba9-f4a1-4c3b-bb2b-3615bdf08c5f">
+                <semantic:inputEntry id="_26fcd76c-f714-4d48-8ec5-d6fab33c37e0">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ba2801d5-6cd3-4494-8cc1-bdb2093c17f4">
+                    <semantic:text>"STANDARD"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_90f3d372-0905-4ec0-87c5-b5dd318b96e0">
+                    <semantic:text>&lt; 25</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_458098a0-23a7-4fbf-bb85-8d6761f72057">
+                    <semantic:text>2</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+            <semantic:rule id="_73b8d19a-e71e-40bb-85dd-7271497c8e4e">
+                <semantic:inputEntry id="_55dd8d5c-e7c8-4519-896a-3b47f1f1efb0">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e25d4437-6f9f-4410-81e8-4e743c361e50">
+                    <semantic:text>"STANDARD"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c9c95a06-9c9e-4c08-bf4d-4ad1ed08d047">
+                    <semantic:text>&gt;= 25</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_ef3be030-85da-4f24-aab9-9a52d4354f45">
+                    <semantic:text>1</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+            <semantic:rule id="_dd40360f-0380-44e6-a9c3-0f7af350c31b">
+                <semantic:inputEntry id="_ebe30dc4-6368-41ab-b4c0-ebb604398804">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_141a9e25-ae7e-4856-b3ad-57eaf440c29e">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_6c3a1ca6-43b7-4089-9bf1-6d8b10757ff6">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_25df6624-d526-47d3-bc33-d024bd2b0264">
+                    <semantic:text>0</semantic:text>
+                </semantic:outputEntry>
+            </semantic:rule>
+        </semantic:decisionTable>
+    </semantic:decision>
+    <semantic:inputData id="_d15a52cc-684f-407e-8459-12dd1e283d40" name="Age">
+        <semantic:variable name="Age" id="_2d224ec5-d68a-4dee-96d1-6a1d8ccc2b9b" typeRef="number"/>
+    </semantic:inputData>
+    <semantic:inputData id="_1432307c-611a-4029-9ee1-3c63c62b1b83" name="Incident Count">
+        <semantic:variable name="Incident Count" id="_d2abcf93-0c5b-4414-a022-767d32590eda" typeRef="number"/>
+    </semantic:inputData>
+    <semantic:inputData id="_06767467-0f6f-4080-9f76-4901638de5b4" name="Cardholder Status">
+        <semantic:variable name="Cardholder Status" id="_e8a6592c-7f50-4d68-8750-f599ab8a544b" typeRef="string"/>
+    </semantic:inputData>
+    <dmndi:DMNDI>
+        <dmndi:DMNDiagram id="_7cf363b9-52df-4fa7-8cac-b0c45222f241" name="Page 1">
+            <dmndi:Size height="1050" width="1485"/>
+            <dmndi:DMNShape id="_faa62f48-3755-4543-9a47-14cfd2964e16" dmnElementRef="_6bcfc2cf-8956-47b8-a615-86e922dd703a">
+                <dc:Bounds x="397.5" y="117" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0" xmlns:trisodmn="http://www.trisotech.com/2016/triso/dmn" trisodmn:defaultBounds="true">
+                    <dc:Bounds height="12.312500000000004" width="147" x="400" y="140.84375"/>
+                </dmndi:DMNLabel>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_fff1fe68-8b3a-4287-9667-5c7261c3dc72" dmnElementRef="_d15a52cc-684f-407e-8459-12dd1e283d40">
+                <dc:Bounds x="187.7588291168213" y="354" width="135.48234176635742" height="60"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0" xmlns:trisodmn="http://www.trisotech.com/2016/triso/dmn" trisodmn:defaultBounds="true">
+                    <dc:Bounds height="12.3125" width="94" x="206.99680137634277" y="376.84375"/>
+                </dmndi:DMNLabel>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_f69cd93d-e40c-46b4-877b-c5f74622a1e4" dmnElementRef="_1432307c-611a-4029-9ee1-3c63c62b1b83">
+                <dc:Bounds x="408.7588291168213" y="354" width="135.48234176635742" height="60"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0" xmlns:trisodmn="http://www.trisotech.com/2016/triso/dmn" trisodmn:defaultBounds="true">
+                    <dc:Bounds height="12" width="94" x="427.9968013763428" y="377"/>
+                </dmndi:DMNLabel>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_a90fe78e-4391-4793-9118-c0776d4c52c2" dmnElementRef="_06767467-0f6f-4080-9f76-4901638de5b4">
+                <dc:Bounds x="625.7588291168213" y="354" width="135.48234176635742" height="60"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0" xmlns:trisodmn="http://www.trisotech.com/2016/triso/dmn" trisodmn:defaultBounds="true">
+                    <dc:Bounds height="12" width="94" x="644.9968013763428" y="377"/>
+                </dmndi:DMNLabel>
+            </dmndi:DMNShape>
+            <dmndi:DMNEdge id="_dbfcd469-ebb5-494e-98f8-64eeec1222ce" dmnElementRef="_1fd373dc-61f7-4581-9e66-35e043ad0375">
+                <di:waypoint x="265.4968013763428" y="354"/>
+                <di:waypoint x="424.1732026143791" y="178"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_f3306a87-6bfb-49e6-b5f8-00608da37e18" dmnElementRef="_d352a5ec-5a95-4a7f-af15-7ab75bb22ccd">
+                <di:waypoint x="476.4968013763428" y="354"/>
+                <di:waypoint x="474.5" y="178"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_3be413db-4006-46d0-b334-fbbb6f01a0cd" dmnElementRef="_6dfe1bab-470a-4d57-a52f-01913fabd04e">
+                <di:waypoint x="693.4968013763428" y="354"/>
+                <di:waypoint x="524.8267973856209" y="178"/>
+                <dmndi:DMNLabel sharedStyle="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0"/>
+            </dmndi:DMNEdge>
+        </dmndi:DMNDiagram>
+        <dmndi:DMNStyle id="LS_6ac122e1-0fb1-47d2-8c9b-55e7dba04085_0" fontFamily="arial,helvetica,sans-serif" fontSize="11" fontBold="false" fontItalic="false" fontUnderline="false" fontStrikeThrough="false"/>
+    </dmndi:DMNDI>
+</semantic:definitions>
