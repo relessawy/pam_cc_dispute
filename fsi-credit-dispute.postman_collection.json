@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "eaf51af2-74cb-41dd-8cd1-34459429cf37",
+		"_postman_id": "88900bc8-9088-496d-85dc-f279d1739901",
 		"name": "fsi-credit-dispute",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -46,6 +46,31 @@
 		{
 			"name": "Get DMN Model",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "redhatpam1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "pamAdmin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -62,7 +87,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-decisions_1.0.0/dmn",
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0.0/dmn",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -74,7 +99,7 @@
 						"rest",
 						"server",
 						"containers",
-						"credit-dispute-decisions_1.0.0",
+						"credit-dispute-case_1.0.0",
 						"dmn"
 					]
 				}
@@ -84,6 +109,31 @@
 		{
 			"name": "Evaluate DMN Model",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "redhatpam1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "pamAdmin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -97,10 +147,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"model-namespace\" : \"http://www.entando.com/dmn/definitions/_c540edb3-4b27-4577-8863-1cf0267762b3\",\n  \"model-name\" : \"credit-dispute-simple-input\",\n  \"decision-name\" : [ ],\n  \"decision-id\" : [ ],\n  \"dmn-context\" : {\n  \t\"Age\" : 25,\n  \t\"Incident Count\": 3,\n\t\"Cardholder Status\": \"GOLD\",\n\t\"Fraud Amount\": 500\n  }\n}"
+					"raw": "{\n  \"model-namespace\" : \"http://www.trisotech.com/dmn/definitions/_6ac122e1-0fb1-47d2-8c9b-55e7dba04085\",\n  \"model-name\" : \"CardholderRiskRating\",\n  \"decision-name\" : [ ],\n  \"decision-id\" : [ ],\n  \"dmn-context\" : {\n  \t\"Age\" : 24,\n  \t\"Incident Count\": 3,\n\t\"Cardholder Status\": \"SILVER\",\n\t\"Fraud Amount\": 600\n  }\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-decisions_1.0.0/dmn",
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0.0/dmn",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -112,7 +162,7 @@
 						"rest",
 						"server",
 						"containers",
-						"credit-dispute-decisions_1.0.0",
+						"credit-dispute-case_1.0.0",
 						"dmn"
 					]
 				}
@@ -122,6 +172,31 @@
 		{
 			"name": "Start Case (Automated)",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "redhatpam1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "pamAdmin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -135,7 +210,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"case-data\" : { \n\t\"totalFraudAmount\" : 5,\n  \t\"customerStatus\" : \"GOLD\",\n  \t\"customerAge\" : 25,\n  \t\"incidentCount\" : 1\n  },\n  \"case-user-assignments\" : {\n  \t\"owner\" : \"krisv\",\n    \"fraud-manager\" : \"\"\n  },\n  \"case-group-assignments\" : {\n    \"fraud-manager\" : \"IT\"\n }\n}"
+					"raw": "{\n  \"case-data\" : { \n\t\"totalFraudAmount\" : 5,\n  \t\"customerStatus\" : \"GOLD\",\n  \t\"customerAge\" : 25,\n  \t\"incidentCount\" : 1\n  },\n  \"case-user-assignments\" : {\n  \t\"owner\" : \"pamAdmin\",\n    \"fraud-manager\" : \"\"\n  },\n  \"case-group-assignments\" : {\n    \"fraud-manager\" : \"manager\"\n }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0.0/cases/CreditCardDisputeCase.FraudDispute/instances",
@@ -162,6 +237,31 @@
 		{
 			"name": "Start Case (Manual)",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "redhatpam1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "pamAdmin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -175,7 +275,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"case-data\" : { \n\t\"totalFraudAmount\" : 5000,\n  \t\"customerStatus\" : \"STANDARD\",\n  \t\"customerAge\" : 19,\n  \t\"incidentCount\" : 5\n  },\n  \"case-user-assignments\" : {\n  \t\"owner\" : \"krisv\",\n    \"fraud-manager\" : \"\"\n  },\n  \"case-group-assignments\" : {\n    \"fraud-manager\" : \"IT\"\n }\n}"
+					"raw": "{\n  \"case-data\" : { \n\t\"totalFraudAmount\" : 5000,\n  \t\"customerStatus\" : \"STANDARD\",\n  \t\"customerAge\" : 19,\n  \t\"incidentCount\" : 5\n  },\n  \"case-user-assignments\" : {\n  \t\"owner\" : \"pamAdmin\",\n    \"fraud-manager\" : \"\"\n  },\n  \"case-group-assignments\" : {\n    \"fraud-manager\" : \"manager\"\n }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0.0/cases/CreditCardDisputeCase.FraudDispute/instances",
@@ -198,6 +298,68 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "delete case container",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "redhatpam1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "pamAdmin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/credit-dispute-case_1.0.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"credit-dispute-case_1.0.0"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -205,14 +367,36 @@
 		"basic": [
 			{
 				"key": "password",
-				"value": "krisv",
+				"value": "redhatpam1!",
 				"type": "string"
 			},
 			{
 				"key": "username",
-				"value": "krisv",
+				"value": "pamAdmin",
 				"type": "string"
 			}
 		]
-	}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e0725346-3224-453e-ad5a-98c22420831d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a4e553ac-ca20-467f-a1d0-04d0977eed60",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }
