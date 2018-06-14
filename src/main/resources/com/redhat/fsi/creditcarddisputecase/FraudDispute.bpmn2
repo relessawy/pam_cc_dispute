@@ -8,7 +8,6 @@
   <bpmn2:itemDefinition id="_caseFile_customerAgeItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="_caseFile_incidentCountItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="_caseFile_cardholderItem" structureRef="com.redhat.fsi.creditcarddisputecase.Cardholder"/>
-  <bpmn2:itemDefinition id="_cardholderRiskRatingItem" structureRef="java.math.BigDecimal"/>
   <bpmn2:signal id="_1282ebd5-91c4-3f00-af8a-ac6eafa242d9" name="Milestone 1: Automated Chargeback"/>
   <bpmn2:signal id="_61a0dbd7-71d0-32b5-8275-8a9f8bb2aa45" name="Milestone 2: Manual Chargeback"/>
   <bpmn2:signal id="_73ed0258-67c8-3309-9af6-8f3103e6aaca" name="Milestone 3: Credit Account"/>
@@ -64,7 +63,6 @@
       </drools:metaData>
       <drools:import name="com.redhat.fsi.creditcarddisputecase.Cardholder"/>
       <drools:import name="com.redhat.fsi.creditcarddisputecase.FraudData"/>
-      <drools:import name="java.math.BigDecimal"/>
     </bpmn2:extensionElements>
     <bpmn2:property id="caseFile_customerStatus" itemSubjectRef="_caseFile_customerStatusItem"/>
     <bpmn2:property id="caseFile_totalFraudAmount" itemSubjectRef="_caseFile_totalFraudAmountItem"/>
