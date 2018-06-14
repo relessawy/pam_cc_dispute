@@ -72,7 +72,6 @@
     <bpmn2:property id="caseFile_customerAge" itemSubjectRef="_caseFile_customerAgeItem"/>
     <bpmn2:property id="caseFile_incidentCount" itemSubjectRef="_caseFile_incidentCountItem"/>
     <bpmn2:property id="caseFile_cardholder" itemSubjectRef="_caseFile_cardholderItem"/>
-    <bpmn2:property id="cardholderRiskRating" itemSubjectRef="_cardholderRiskRatingItem"/>
     <bpmn2:scriptTask id="_BC035C91-7022-42FC-BA64-48F5C8AC3362" drools:selectable="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="ChargeBack" scriptFormat="http://www.java.com/java">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -656,8 +655,8 @@ kcontext.setVariable("caseFile_cardholder", cardholder);]]></bpmn2:script>
         <drools:onExit-script scriptFormat="http://www.java.com/java">
           <drools:script><![CDATA[System.out.println("In the output");
 
-caseFile_cardholder.setRiskRating(caseFile_cardholderRiskRating.intValueExact());
-kcontext.setVariable("caseFile_cardholder", caseFile_cardholder);
+//caseFile_cardholder.setRiskRating(caseFile_cardholderRiskRating.intValueExact());
+//kcontext.setVariable("caseFile_cardholder", caseFile_cardholder);
 ]]></drools:script>
         </drools:onExit-script>
       </bpmn2:extensionElements>
