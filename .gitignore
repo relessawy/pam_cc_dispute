@@ -3,3 +3,4 @@
 .settings
 entando-dev.log
 target
+.DS_Store

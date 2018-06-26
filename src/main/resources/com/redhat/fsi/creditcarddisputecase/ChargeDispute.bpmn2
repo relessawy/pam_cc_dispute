@@ -648,7 +648,7 @@ kcontext.setVariable("caseFile_cardholder", cardholder);]]></bpmn2:script>
         <drools:onExit-script scriptFormat="http://www.java.com/java">
           <drools:script><![CDATA[System.out.println("In the output");
 
-BigDecimal bd = (BigDecimal)cardholderRiskRating;
+BigDecimal bd = (BigDecimal)caseFile_cardholderRiskRating;
 if (bd != null)
 {
   System.out.println("BD: " + bd.toString());
@@ -724,7 +724,7 @@ if (bd != null)
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="_vjXaQnjuEeizoelFMjZGVQ">
         <bpmn2:sourceRef>_2465E001-5445-41D3-A076-2085F2063611_Cardholder-Risk-RatingOutputX</bpmn2:sourceRef>
-        <bpmn2:targetRef>cardholderRiskRating</bpmn2:targetRef>
+        <bpmn2:targetRef>caseFile_cardholderRiskRating</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="_DF218141-2ABC-4D20-83E7-4FDC14C6CC22" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="_E46B4247-D9F7-4133-9701-D9B35DA97BC1" targetRef="_2465E001-5445-41D3-A076-2085F2063611"/>
