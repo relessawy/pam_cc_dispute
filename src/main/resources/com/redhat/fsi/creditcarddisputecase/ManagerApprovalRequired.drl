@@ -1,5 +1,6 @@
 package com.redhat.fsi.creditcarddisputecase;
 import org.jbpm.casemgmt.api.model.instance.*;
+import java.util.Map;
 
 rule "Manager Approval Required"
 ruleflow-group "manager-approval-check"
@@ -8,7 +9,7 @@ when
     $caseData : CaseFileInstance()
     FraudData(totalFraudAmount > 1000)
 then
-    java.util.Map<String, Object> params = new Map<>();
+    Map<String, Object> params = new Map<>();
     params.put("caseFile_managerApprovalRequired", true);
     $caseData.addAll(params);
 end
