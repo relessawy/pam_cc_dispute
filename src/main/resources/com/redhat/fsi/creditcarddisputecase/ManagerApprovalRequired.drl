@@ -8,7 +8,7 @@ when
     $caseData : CaseFileInstance()
     FraudData(totalFraudAmount > 1000)
 then
-    Map<String, Object> params = new Map<>();
+    java.util.Map<String, Object> params = new Map<>();
     params.put("caseFile_managerApprovalRequired", true);
     $caseData.addAll(params);
 end
