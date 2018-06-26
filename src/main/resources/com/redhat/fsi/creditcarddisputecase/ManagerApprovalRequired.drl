@@ -2,6 +2,7 @@ package com.redhat.fsi.creditcarddisputecase;
 import org.jbpm.casemgmt.api.model.instance.*;
 
 rule "Manager Approval Required"
+ruleflow-group "manager-approval-check"
 dialect "mvel"
 when
     $caseData : CaseFileInstance()
