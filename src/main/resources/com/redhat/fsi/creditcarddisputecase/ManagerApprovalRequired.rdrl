@@ -1,0 +1,9 @@
+package com.redhat.fsi.creditcarddisputecase;
+
+import java.lang.Number;
+
+rule "ManagerApprovalRequired"
+	dialect "mvel"
+	when
+	then
+end
