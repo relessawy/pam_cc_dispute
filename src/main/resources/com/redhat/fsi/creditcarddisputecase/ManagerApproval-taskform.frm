@@ -1,0 +1,1 @@
+{"id":"73e3f3c0-d695-4e33-b3da-c68245347c55","name":"ManagerApproval-taskform.frm","model":{"taskName":"ManagerApproval","processId":"CreditCardDisputeCase.ChargeDispute","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
