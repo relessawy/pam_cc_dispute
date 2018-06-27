@@ -1,0 +1,1 @@
+{"id":"2cc1f2a0-c0cc-4ee9-bda0-1cf3f4e41b90","name":"ReviewCustomerDocs-taskform.frm","model":{"taskName":"ReviewCustomerDocs","processId":"CreditCardDisputeCase.ChargeDispute","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
