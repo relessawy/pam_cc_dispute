@@ -1,0 +1,1 @@
+{"id":"51e4514a-bb1f-4b86-a03c-6847168b6594","name":"ReviewVendorDocs-taskform.frm","model":{"taskName":"ReviewVendorDocs","processId":"CreditCardDisputeCase.ChargeDispute","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}
