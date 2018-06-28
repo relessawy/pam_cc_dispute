@@ -10,6 +10,7 @@ when
     $caseData : CaseFileInstance()
     FraudData(totalFraudAmount > 1000)
 then
+    System.out.println("In the then section of the rules");
     //Map<String, Object> params = new HashMap<String, Object>();
     //params.put("caseFile_managerApprovalRequired", true);
     //$caseData.addAll(params);
