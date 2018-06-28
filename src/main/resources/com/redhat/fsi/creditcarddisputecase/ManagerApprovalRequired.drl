@@ -8,7 +8,7 @@ ruleflow-group "manager-approval-check"
 dialect "mvel"
 when
     $caseData : CaseFileInstance()
-    FraudData(totalFraudAmount > 1000)
+    FraudData(totalFraudAmount > 1000) from $caseData.getData("fraudData")
 then
     System.out.println("In the then section of the rules");
     //Map<String, Object> params = new HashMap<String, Object>();
