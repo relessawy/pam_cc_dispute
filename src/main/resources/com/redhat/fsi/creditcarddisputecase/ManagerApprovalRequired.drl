@@ -9,10 +9,10 @@ dialect "mvel"
 when
     //$caseData : CaseFileInstance()
     FraudData(totalFraudAmount > 1000)// from $caseData.getData("fraudData")
-    $managerApprovalRequired: Boolean()
+    managerApprovalRequired: Boolean()
 then
     System.out.println("In the then section of the rules");
-    $managerApprovalRequired = true;
+    managerApprovalRequired = true;
     //Map<String, Object> params = new HashMap<String, Object>();
     //params.put("caseFile_managerApprovalRequired", true);
     //$caseData.addAll(params);
