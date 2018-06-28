@@ -10,7 +10,7 @@ public class FraudData implements java.io.Serializable {
 
 	private java.lang.Integer lineItemCount;
 	private java.lang.Integer maxDaysElapsed;
-	private Double totalFraudAmount;
+	private Float totalFraudAmount;
 	private boolean automated;
 	private java.lang.String customerStatus;
 	private java.lang.Integer disputeRiskRating;
@@ -77,18 +77,18 @@ public class FraudData implements java.io.Serializable {
 				+ disputeRiskRating + "]";
 	}
 
-	public java.lang.Double getTotalFraudAmount() {
+	public java.lang.Float getTotalFraudAmount() {
 		return this.totalFraudAmount;
 	}
 
-	public void setTotalFraudAmount(java.lang.Double totalFraudAmount) {
+	public void setTotalFraudAmount(java.lang.Float totalFraudAmount) {
 		this.totalFraudAmount = totalFraudAmount;
 	}
 
 	public FraudData(java.lang.Integer lineItemCount,
-			java.lang.Integer maxDaysElapsed,
-			java.lang.Double totalFraudAmount, boolean automated,
-			java.lang.String customerStatus, java.lang.Integer disputeRiskRating) {
+			java.lang.Integer maxDaysElapsed, java.lang.Float totalFraudAmount,
+			boolean automated, java.lang.String customerStatus,
+			java.lang.Integer disputeRiskRating) {
 		this.lineItemCount = lineItemCount;
 		this.maxDaysElapsed = maxDaysElapsed;
 		this.totalFraudAmount = totalFraudAmount;
