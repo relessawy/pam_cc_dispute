@@ -10,7 +10,7 @@ public class FraudData implements java.io.Serializable {
 
 	private java.lang.Integer lineItemCount;
 	private java.lang.Integer maxDaysElapsed;
-	private java.lang.Float totalFraudAmount;
+	private Double totalFraudAmount;
 	private boolean automated;
 	private java.lang.String customerStatus;
 	private java.lang.Integer disputeRiskRating;
@@ -44,14 +44,6 @@ public class FraudData implements java.io.Serializable {
 		this.customerStatus = customerStatus;
 	}
 
-	public java.lang.Float getTotalFraudAmount() {
-		return this.totalFraudAmount;
-	}
-
-	public void setTotalFraudAmount(java.lang.Float totalFraudAmount) {
-		this.totalFraudAmount = totalFraudAmount;
-	}
-
 	public boolean isAutomated() {
 		return this.automated;
 	}
@@ -76,23 +68,33 @@ public class FraudData implements java.io.Serializable {
 		this.disputeRiskRating = disputeRiskRating;
 	}
 
+	@Override
+	public String toString() {
+		return "FraudData [lineItemCount=" + lineItemCount
+				+ ", maxDaysElapsed=" + maxDaysElapsed + ", totalFraudAmount="
+				+ totalFraudAmount + ", automated=" + automated
+				+ ", customerStatus=" + customerStatus + ", disputeRiskRating="
+				+ disputeRiskRating + "]";
+	}
+
+	public java.lang.Double getTotalFraudAmount() {
+		return this.totalFraudAmount;
+	}
+
+	public void setTotalFraudAmount(java.lang.Double totalFraudAmount) {
+		this.totalFraudAmount = totalFraudAmount;
+	}
+
 	public FraudData(java.lang.Integer lineItemCount,
-			java.lang.Integer maxDaysElapsed, java.lang.Float totalFraudAmount,
-			boolean automated, java.lang.String customerStatus,
-			java.lang.Integer disputeRiskRating) {
+			java.lang.Integer maxDaysElapsed,
+			java.lang.Double totalFraudAmount, boolean automated,
+			java.lang.String customerStatus, java.lang.Integer disputeRiskRating) {
 		this.lineItemCount = lineItemCount;
 		this.maxDaysElapsed = maxDaysElapsed;
 		this.totalFraudAmount = totalFraudAmount;
 		this.automated = automated;
 		this.customerStatus = customerStatus;
 		this.disputeRiskRating = disputeRiskRating;
-	}
-
-	@Override
-	public String toString() {
-		return "FraudData [lineItemCount=" + lineItemCount + ", maxDaysElapsed=" + maxDaysElapsed
-				+ ", totalFraudAmount=" + totalFraudAmount + ", automated=" + automated + ", customerStatus="
-				+ customerStatus + ", disputeRiskRating=" + disputeRiskRating + "]";
 	}
 
 }
